@@ -1,0 +1,40 @@
+﻿.ui-dialog-title {
+    font-size: 12px !important;
+}
+
+.ui-dialog, .ui-dialog-titlebar {
+    padding: 4px !important;
+}
+
+.makesmaller {
+    font-family: "sans-serif", "Trebuchet MS", "Helvetica", "Arial", "Verdana";
+    font-size: 64%;
+    overflow: auto;
+}
+
+button.nav {
+    margin-right: 4px;
+}
+
+    button.nav:hover, select.nav {
+        cursor: pointer;
+    }
+
+select.nav {
+    margin-top: 3px;
+    height: 24px;
+    width: 150px;
+    border-radius: 4px;
+}
+
+div.nav {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+    div.nav:hover {
+        opacity: 1;
+    }

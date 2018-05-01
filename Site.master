@@ -1,0 +1,255 @@
+﻿<% @  Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .page
+        {
+            float:left;
+            margin:0 60px 0 60px;
+        }
+        .style8
+        {
+            width: 1210px;
+            height: 218px;
+        }
+        .style9
+        {
+            width: 900px;
+            height: 5px;
+        }
+        .style10
+        {
+            /*height: 222px;*/
+        }
+        .style13
+        {
+            width: 187px;
+            height:53px;
+            text-align:left;
+            vertical-align:bottom;
+        }      
+        .style14
+        {
+            width:1023px;
+            height:53px;
+            text-align:left;
+            vertical-align:bottom;
+            background-image:url(images/导航.jpg);
+
+        }       
+      * {padding:0; margin:0}
+      .dropdown 
+      {
+           float:right;
+           padding-left:2px;
+           font-size:16px; 
+           height: 35px;
+           width: 80px;
+           font-family:黑体;
+        }
+       .dropdown dt 
+       {
+           width:75px; 
+           border:1px solid #9ac1c9;
+           padding:2px;
+           font-weight:bold;
+           cursor:pointer; 
+           height: 24px;
+           text-align:center;
+        }
+       .dropdown dt:hover {background:url(/jscss/demoimg/200907/header_over.gif)}
+       .dropdown dd {position:absolute; overflow:hidden; width:80px; display:none; background:#fff; z-index:90; opacity:0;text-align:center;}
+       .dropdown ul {width:90px; border:1px solid #9ac1c9; list-style:none; border-top:none}
+       .dropdown li {display:inline}
+       .dropdown span {display:inline}
+       .dropdown a, .dropdown a:active, .dropdown a:visited {display:block; padding:3px; color:#333; text-decoration:none; background:#eaf0f2; width:80px}
+       .dropdown a:hover {background:#d9e1e4; color:#000}
+       .dropdown .underline {border-bottom:0px solid #b9d6dc; text-align:center;padding-left:0px;}   
+       .dropdown span .link
+       {  
+           width:75px; 
+           border:1px solid #9ac1c9;
+           padding:2px;
+           font-weight:bold;
+           cursor:pointer; 
+           height: 24px;
+           text-align:center;
+           }
+       .copy_right
+       {
+           line-height:20px;text-align:center;}
+           
+    </style>
+
+    <script type="text/javascript">
+        var DDSPEED = 10;
+        var DDTIMER = 15;
+        function ddMenu(id, d) {
+            var h = document.getElementById(id + '-ddheader');
+            var c = document.getElementById(id + '-ddcontent');
+            clearInterval(c.timer);
+            if (d == 1) {
+                clearTimeout(h.timer);
+                if (c.maxh && c.maxh <= c.offsetHeight) { return }
+                else if (!c.maxh) {
+                    c.style.display = 'block';
+                    c.style.height = 'auto';
+                    c.maxh = c.offsetHeight;
+                    c.style.height = '0px';
+                }
+                c.timer = setInterval(function () { ddSlide(c, 1) }, DDTIMER);
+            } else {
+                h.timer = setTimeout(function () { ddCollapse(c) }, 50);
+            }
+        }
+
+        function ddCollapse(c) {
+            c.timer = setInterval(function () { ddSlide(c, -1) }, DDTIMER);
+        }
+
+        function cancelHide(id) {
+            var h = document.getElementById(id + '-ddheader');
+            var c = document.getElementById(id + '-ddcontent');
+            clearTimeout(h.timer);
+            clearInterval(c.timer);
+            if (c.offsetHeight < c.maxh) {
+                c.timer = setInterval(function () { ddSlide(c, 1) }, DDTIMER);
+            }
+        }
+
+        function ddSlide(c, d) {
+            var currh = c.offsetHeight;
+            var dist;
+            if (d == 1) {
+                dist = (Math.round((c.maxh - currh) / DDSPEED));
+            } else {
+                dist = (Math.round(currh / DDSPEED));
+            }
+            if (dist <= 1 && d == 1) {
+                dist = 1;
+            }
+            c.style.height = currh + (dist * d) + 'px';
+            c.style.opacity = currh / c.maxh;
+            c.style.filter = 'alpha(opacity=' + (currh * 100 / c.maxh) + ')';
+            if ((currh < 2 && d != 1) || (currh > (c.maxh - 2) && d == 1)) {
+                clearInterval(c.timer);
+            }
+        }
+</script>
+</head>
+<body>
+    <div class="page">
+        <table style="text-align:center;width:1200px;border:0;" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="style13"><img alt="" src="images/校徽.jpg" /></td>
+            <td class="style14">
+                <dl class="dropdown">
+                    <dt id="seven-ddheader" onmouseover="ddMenu('seven',1)" onmouseout="ddMenu('seven',-1)" style="color: #666666">退出登录</dt>
+                    <dd id="seven-ddcontent" onmouseover="cancelHide('seven')" onmouseout="ddMenu('seven',-1)">
+                        <ul>
+                            <li><a href="Default999.aspx" class="underline">注&nbsp;&nbsp;销</a></li>
+                            <li><a href="Default.aspx" class="underline">登&nbsp;&nbsp;录</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl class="dropdown">
+                    <dt id="six-ddheader" onmouseover="ddMenu('six',1)" onmouseout="ddMenu('six',-1)" style="color: #666666">信息反馈</dt>
+                    <dd id="six-ddcontent" onmouseover="cancelHide('six')" onmouseout="ddMenu('six',-1)">
+                        <ul>
+                            <li><a href="Manages1.aspx" class="underline">留言信息</a></li>
+                            <li><a href="Manages2.aspx" class="underline">游客留言</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl class="dropdown">
+                    <dt id="five-ddheader" onmouseover="ddMenu('five',1)" onmouseout="ddMenu('five',-1)" style="color: #666666">统计报表</dt>
+                    <dd id="five-ddcontent" onmouseover="cancelHide('five')" onmouseout="ddMenu('five',-1)">
+                        <ul>
+                            <li><a href="Default4.aspx" class="underline">校区报表</a></li>
+                            <li><a href="Default24.aspx" class="underline">学院报表</a></li>
+                            <li><a href="#" class="underline">宿舍报表</a></li>
+                            <li><a href="#" class="underline">辅助报表</a></li>
+                            <li><a href="Default25.aspx" class="underline">综合报表</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl class="dropdown">
+                    <dt id="four-ddheader" onmouseover="ddMenu('four',1)" onmouseout="ddMenu('four',-1)" style="color: #666666">房产评价</dt>
+                    <dd id="four-ddcontent" onmouseover="cancelHide('four')" onmouseout="ddMenu('four',-1)">
+                        <ul>
+                            <li><a href="Evaluation1.aspx" class="underline">实时核算</a></li>
+                            <li><a href="Evaluation2.aspx" class="underline">房产评估</a></li>
+                            <li><a href="Evaluation3.aspx" class="underline">数据导出</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl class="dropdown">
+                    <dt id="three-ddheader" onmouseover="ddMenu('three',1)"
+                        onmouseout="ddMenu('three',-1)" style="color: #666666">信息公示</dt>
+                    <dd id="three-ddcontent" onmouseover="cancelHide('three')" onmouseout="ddMenu('three',-1)">
+                        <ul>
+                            <li><a href="Information1.aspx" class="underline">信息栏</a></li>
+                            <li><a href="Information4.aspx" class="underline">公告栏</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl class="dropdown">
+                    <dt id="two-ddheader" onmouseover="ddMenu('two',1)" onmouseout="ddMenu('two',-1)" style="color: #666666">房产查询</dt>
+                    <dd id="two-ddcontent" onmouseover="cancelHide('two')" onmouseout="ddMenu('two',-1)">
+                        <ul>
+                            <li><a href="Inquiers1.aspx" class="underline">模糊查询</a></li>
+                            <li><a href="Inquiers51.aspx" class="underline">综合查询</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl class="dropdown">
+                    <span>
+                        <a href="Default.aspx"" class="link" style="background-color:inherit;color:#666666;" >网站首页</a>
+                    </span>
+                </dl>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><img alt="" class="style8" src="images/标题终.jpg" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="style10">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    <p>
+                        <br />
+                    </p>
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="height:5px"><img alt="" class="style9" src="images/版权横条.jpg" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-size: 12px; color: Gray; font-family: 宋体, Arial, Helvetica, sans-serif;">
+                <div class="copy_right">版权所有©东北电力大学数值计算及软件研发中心</div>
+                <div class="copy_right">地址：吉林省吉林市长春路169号</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="height: 5px"><img alt="" class="style9" src="images/版权横条.jpg" /></td>
+        </tr>
+        </table>
+    </div>
+</body>
+</html>

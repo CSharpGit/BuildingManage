@@ -1,0 +1,107 @@
+﻿.icon_open {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/open.png) !important;
+}
+
+.icon_save {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/save.png) !important;
+}
+
+.icon_print {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/print.png) !important;
+}
+
+.icon_bw {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/bw.png) !important;
+}
+
+.icon_layers {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/layers.png) !important;
+}
+
+.icon_extents {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/extents.png) !important;
+}
+
+.icon_zoomin {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/zoom-in.png) !important;
+}
+
+.icon_zoomout {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/zoom-out.png) !important;
+}
+
+.icon_orbit {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/orbit.png) !important;
+}
+
+.icon_settings {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/settings.png) !important;
+}
+
+.icon_share {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/share.png) !important;
+}
+
+.icon_fm {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/fm.png) !important;
+}
+
+.icon_login {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/login.png) !important;
+}
+
+.icon_logout {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/exit.png) !important;
+}
+
+.icon_line {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/line.png) !important;
+}
+
+.icon_poly {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/poly.png) !important;
+}
+
+.icon_area {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/area.png) !important;
+}
+
+.icon_select {
+    width: 16px;
+    height: 16px;
+    background-image: url(buttons/select.png) !important;
+}
